@@ -6,7 +6,7 @@
 # @date 2021/06/21 - LastModified
 #
 
-## Pygame setup - entire template from Mr. Reid
+## Pygame setup
 import pygame
 import random
 
