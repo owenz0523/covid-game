@@ -4,12 +4,12 @@
 import pygame
 import random
 
-# Player class - taken from Lab 13 program
+# Player class
 class Player(pygame.sprite.Sprite):
   def __init__(self, filename):
     super().__init__()
  
-    # Create image (needs work)
+    # Create image
     self.image = pygame.image.load(filename).convert()
     self.image = pygame.transform.scale(self.image, (50, 50))
     self.image.set_colorkey(BLACK)
@@ -42,7 +42,7 @@ class Player(pygame.sprite.Sprite):
     if self.rect.y > 230:
       self.rect.y = 230
 
-# Objectives Class - taken from Lab 13
+# Objectives Class
 class Objective(pygame.sprite.Sprite):
   def __init__(self, filename):
     super().__init__()
@@ -57,7 +57,7 @@ class Objective(pygame.sprite.Sprite):
     # Fetch the rectangle object
     self.rect = self.image.get_rect()
 
-# Draw scenes and effects for the game - used template from Mr. Reid's Alien, graphics used are referenced in final report
+# Draw scenes and effects for the game
 pos = [15, 15]
 # Draw Scene 1
 def drawIntroScreen1():
@@ -184,7 +184,7 @@ def sceneControl(scene, x, y):
       y = 210
   return scene, x, y
 
-# Check collection - built on code from Lab 13
+# Check collection
 def collectionCheck(scene, objectives):
   if (scene == 3):
     scene3HitList = pygame.sprite.spritecollide(player, scene3List, True)
@@ -228,7 +228,7 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
 
-# Set up object lists - built on code from Lab 13
+# Set up object lists
 spritesList = pygame.sprite.Group()
 playerList = pygame.sprite.Group()
 scene3List = pygame.sprite.Group()
@@ -366,7 +366,7 @@ while not done:
     # Clear screen
     screen.fill(BLACK)
 
-    # Draw - inspired by Mr. Reid's Scene Demo
+    # Draw
     if (player.scene == 1):
       drawIntroScreen1()
     elif (player.scene == 8):
@@ -399,7 +399,7 @@ while not done:
       # Shadow effect
       shadowEffect(player.rect.x, player.rect.y)
 
-      # Timer - learned from www.youtube.com/watch?v=YOCt8nsQqEo
+      # Timer
       currentTime = pygame.time.get_ticks()
       actualTime = (currentTime - startTime)//(1000)
       seconds = str(60 - actualTime)
