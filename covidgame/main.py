@@ -1,10 +1,4 @@
 ##
-# CPT: Final Project
-#
-# @author Owen Zhang
-# @course ICS3UC-03
-# @date 2021/06/21 - LastModified
-#
 
 ## Pygame setup
 import pygame
